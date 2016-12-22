@@ -2,7 +2,7 @@
 
 [![Udacity - Self-Driving Car NanoDegree](https://s3.amazonaws.com/udacity-sdc/github/shield-carnd.svg)](http://www.udacity.com/drive)
 
-#*My solution approach and reflections*
+##**My solution approach and reflections**
 
 I tried out the following techniques to join lane segments after canny detection, region masking and hough transformation of a video frame:
 
@@ -19,7 +19,7 @@ Approach 2 gave me the best result as shown in the video.
 
 When I moved on to trying my pipeline on the challenge video I faced several challenges as listed below:
 
-1. Detecting lane lines against a light concrete background instead of black asphalt and also when there were shadows on the road ahead.
+*Challenge 1: Detecting lane lines against a light concrete background instead of black asphalt and also when there were shadows on the road ahead*
 
 The grayscale image with gaussian blur applied to a video frame basically washed out the pixel intensity difference between the background and the lane lines. I tried the following two approaches to overcome the problem:
 
@@ -28,10 +28,11 @@ The grayscale image with gaussian blur applied to a video frame basically washed
 
 Approach 1.b gave me the best result. However, I realize that this approach may not work ideally when the lane lines are or appear to be of different colors due to environmental conditions (such as night or the presence of snow etc.). On browsing the facebook page for the December 2016 class, I learned of two possible techniques that could be used to deal with this problem: (i) Random Sampling Consensus (RANSAC) and (ii) Kalman Filtering. I spent some time learning about the intuition behind both of those techniques so that I might be able to use it in a future project.
 
-2. Lanes with high curvature
+*Challenge 2: Lanes with high curvature*
+
 On image frames where the lanes had high curvature, the extrapolated straight lane lines appearing somewhat tangential to the curvature of the actual lane line. Some of these artifacts could perhaps be seen in my output for the challenge video. The only option I could think of was to perhaps fit a curve with higher order polynomials intead of a straight line.
 
-#*Finished Videos*
+##**Finished Videos**
 
 ![](https://github.com/eltomate/CarND-LaneLines-P1/raw/master/finished/p1_white.gif)
 
